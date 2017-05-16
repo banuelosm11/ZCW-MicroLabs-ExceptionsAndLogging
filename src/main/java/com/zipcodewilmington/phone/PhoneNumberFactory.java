@@ -5,6 +5,8 @@ import com.zipcodewilmington.tools.RandomNumberFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static com.zipcodewilmington.tools.RandomNumberFactory.createInteger;
+
 /**
  * Created by leon on 5/1/17.
  */
@@ -34,10 +36,10 @@ public final class PhoneNumberFactory {
      * @return an instance of PhoneNumber with randomly generated phone number value
      */ //TODO - Implement logic
     private static PhoneNumber createRandomPhoneNumber() {
-        RandomNumberFactory rand = new RandomNumberFactory(){};
-        int areaCode = rand.createInteger(100,999);
-        int centralOfficeCode = rand.createInteger(100, 999);
-        int phoneLineCode = rand.createInteger(1000, 9999);
+        //RandomNumberFactory rand = new RandomNumberFactory(){};
+        int areaCode = createInteger(100,999);
+        int centralOfficeCode = createInteger(100, 999);
+        int phoneLineCode = createInteger(1000, 9999);
 
 
         return createPhoneNumberSafely(areaCode, centralOfficeCode, phoneLineCode);
